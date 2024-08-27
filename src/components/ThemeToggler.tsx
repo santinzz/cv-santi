@@ -38,7 +38,7 @@ export const ThemeToggler = ({ children }: { children: any }) => {
   }
 
   return (
-    <button className='absolute top-0 right-0 p-2 rounded-md border border-black m-2 dark:border-white' onClick={handleToggleClick}>
+    <button className='top-0 right-0 p-2 rounded-md border fixed border-black m-2 dark:border-white' onClick={handleToggleClick}>
       {children}
     </button>
   )
