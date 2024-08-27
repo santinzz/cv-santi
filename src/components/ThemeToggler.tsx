@@ -1,6 +1,4 @@
-import Moon from "@/icons/Moon.astro"
-import Sun from "@/icons/Sun.astro"
-import { useEffect, useState } from "preact/hooks"
+import { useEffect } from "preact/hooks"
 
 type Theme = 'light' | 'dark'
 
