@@ -1,0 +1,32 @@
+---
+import type { SocialLink } from '@/data'
+
+type Props = SocialLink
+
+const { id, Icon, label, link } = Astro.props
+---
+
+<a 
+  href={link} 
+  target="_blank" 
+  class:list={[
+    "p-[6px] border-black/70 border rounded-md text-black/70 transition hover:text-black hover:border-black",
+    "relative social-anchor dark:border-white/70 dark:text-white/70 hover:dark:text-white hover:dark:border-white"
+  ]}
+>
+  <Icon class="w-8 h-8" />
+  <div class="absolute top-0 left-[50%] -translate-x-1/2 rounded-md mt-8 text-nowrap opacity-0 duration-300 bg-zinc-800 dark:bg-white dark:text-zinc-800 px-1.5 py-0.5 text-white">{label}</div>
+</a>
+
+<script>
+  const anchors = document.querySelectorAll('.social-anchor')
+
+  anchors.forEach(anchor => {
+    anchor.addEventListener('mouseenter', () => {
+      anchor.querySelector('.social-anchor > div')?.classList.replace('opacity-0', 'opacity-100')
+    })
+    anchor.addEventListener('mouseleave', () => {
+      anchor.querySelector('.social-anchor > div')?.classList.replace('opacity-100', 'opacity-0')
+    })
+  })
+</script>

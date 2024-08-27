@@ -1,0 +1,28 @@
+---
+import { socialLinks } from "@/data";
+import World from "@/icons/World.astro";
+import SocialAnchor from "./SocialAnchor.astro";
+---
+
+<section class="flex gap-2 items-center">
+  <article>
+    <h1 class="font-bold text-3xl dark:text-white">Santiago González Núñez</h1>
+    <p class="text-black/80 dark:text-white/80">
+      Estudiante de nivel preparatoria en el Instituto Central Coahuila.
+    </p>
+    <span class="flex gap-2 items-center text-black/80 dark:text-white/80">
+      <World /> 
+      <span class="pt-1 text-sm">Monclova, Coahuila</span>
+    </span>
+    <div class="flex gap-2 mt-3">
+      {socialLinks.map((link) => (
+        <SocialAnchor {...link} />
+      ))}
+    </div>
+  </article>
+  <section>
+    <div>
+      <img src="/avatar.png" alt="Avatar" class="w-32 rounded-lg">
+    </div>
+  </section>
+</section>
